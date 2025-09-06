@@ -2,6 +2,7 @@ import {Text, View,Image,Linking} from 'react-native';
 import FontAwesome6 from '@expo/vector-icons/FontAwesome6';
 import { ActivityIndicator, Button, SafeAreaView, ScrollView } from 'react-native-web';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
+import ProjectCard from './ProjectCard';
 export default function App() {
   const name = "Arafat Mamia"
   const title = "Contact me"
@@ -37,7 +38,7 @@ export default function App() {
       <Text>Founder of shopConnect</Text>
       {renderIcons()}
       <Button title={title} onPress={contactMe} />
-      <ScrollView >
+      {/* <ScrollView >
        <Text style={{ padding: 10, fontSize: 16 }}>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
     eiusmod tempor incididunt ut labore et dolore magna aliqua. Nam
@@ -62,7 +63,25 @@ export default function App() {
     neque viverra justo. Malesuada pellentesque elit eget gravida.
     Vitae nunc sed velit dignissim sodales ut eu sem integer.
   </Text>
-  </ScrollView>
+  </ScrollView> */}
+      <ScrollView horizontal contentContainerStyle={{ gap: 10, padding: 10}} >
+      <ProjectCard
+  image={require('./assets/projects/project1.jpeg')}
+  name="Apple Cards"
+/>
+<ProjectCard
+  image={require('./assets/projects/project2.jpeg')}
+  name="Trello"
+/>
+<ProjectCard
+  image={require('./assets/projects/project3.jpeg')}
+  name="Flappy bird"
+/>
+<ProjectCard
+  image={require('./assets/projects/project4.jpeg')}
+  name="Todo app"
+/> 
+         </ScrollView>
     </View>
   </SafeAreaView>
   </SafeAreaProvider>
