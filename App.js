@@ -1,7 +1,10 @@
-import {Text, View,Image} from 'react-native';
+import {Text, View,Image,Linking} from 'react-native';
 import FontAwesome6 from '@expo/vector-icons/FontAwesome6';
-import { ScrollView } from 'react-native-web';
+import { Button, ScrollView } from 'react-native-web';
 export default function App() {
+  const contactMe = ()=>{
+    Linking.openURL("mailto:arafatmamia001@gmail.com")
+  }
   return (
     <View style={{flex:1,alignItems:'center'}}>
       <Image source={{
@@ -17,6 +20,7 @@ export default function App() {
        <FontAwesome6 name="x-twitter" size={24} color="black" />
        <FontAwesome6 name="at" size={24} color="black" />
       </View>
+      <Button title="Contact me" onPress={contactMe} />
       <ScrollView >
        <Text style={{ padding: 10, fontSize: 16 }}>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
