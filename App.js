@@ -1,11 +1,14 @@
 import {Text, View,Image,Linking} from 'react-native';
 import FontAwesome6 from '@expo/vector-icons/FontAwesome6';
-import { Button, ScrollView } from 'react-native-web';
+import { Button, SafeAreaView, ScrollView } from 'react-native-web';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 export default function App() {
   const contactMe = ()=>{
     Linking.openURL("mailto:arafatmamia001@gmail.com")
   }
   return (
+      <SafeAreaProvider>
+        <SafeAreaView>
     <View style={{flex:1,alignItems:'center'}}>
       <Image source={{
         uri:"https://notjustdev-dummy.s3.us-east-2.amazonaws.com/pinterest/0.jpeg"}}
@@ -48,6 +51,8 @@ export default function App() {
   </Text>
   </ScrollView>
     </View>
+  </SafeAreaView>
+  </SafeAreaProvider>
   );
 }
 
