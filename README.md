@@ -1,2 +1,2 @@
-# BusinessCard
-first project of Mastery of react native
+# Business Card
+## First project of react native mastery
