@@ -1,22 +1,27 @@
-import { Image, View, Text } from 'react-native';
+import { Image, View, Text,StyleSheet } from 'react-native';
 
 export default function ProjectCard({ image, name }) {
   return (
     <View>
       <Image
         source={image}
-        style={{ height: 150, width:150, borderRadius: 10 }}
+        style={styles.image}
       />
       <Text
-        style={{
-          fontWeight: 'bold',
-          fontSize: 20,
-          color: 'dimgray',
-          marginTop: 10,
-        }}
+        style={styles.text}
       >
         {name}
       </Text>
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+    image:{ height: 150, width:150, borderRadius: 10 },
+    text:{
+          fontWeight: 'bold',
+          fontSize: 20,
+          color: 'dimgray',
+          marginTop: 10,
+        }
+})
