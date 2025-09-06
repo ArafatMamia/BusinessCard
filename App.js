@@ -3,9 +3,20 @@ import FontAwesome6 from '@expo/vector-icons/FontAwesome6';
 import { Button, SafeAreaView, ScrollView } from 'react-native-web';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 export default function App() {
+  const name = "Arafat Mamia"
+  const title = "Contact me"
   const contactMe = ()=>{
     Linking.openURL("mailto:arafatmamia001@gmail.com")
   }
+  const renderIcons = () => {
+	  return (
+	    <View style={{ flexDirection: 'row', gap: 10, marginVertical: 10 }}>
+	      <FontAwesome6 name="github" size={24} color="black" />
+	      <FontAwesome6 name="x-twitter" size={24} color="black" />
+	      <FontAwesome6 name="at" size={24} color="black" />
+	    </View>
+	  );
+	};
   return (
       <SafeAreaProvider>
         <SafeAreaView>
@@ -16,14 +27,10 @@ export default function App() {
       <Image 
       source={require('./assets/vadim.png')}
        style={{width:150,height:150,borderRadius:150, borderColor:'white', borderWidth:5,marginTop:-75}}/>
-      <Text style={{fontSize:30,fontWeight:'bold'}}>Arafat Mamia</Text>
+      <Text style={{fontSize:30,fontWeight:'bold'}}>{name}</Text>
       <Text>Founder of shopConnect</Text>
-      <View style={{gap:10,flexDirection:'row',marginVertical:10}}>
-       <FontAwesome6 name="github" size={24} color="black" />
-       <FontAwesome6 name="x-twitter" size={24} color="black" />
-       <FontAwesome6 name="at" size={24} color="black" />
-      </View>
-      <Button title="Contact me" onPress={contactMe} />
+      {renderIcons()}
+      <Button title={title} onPress={contactMe} />
       <ScrollView >
        <Text style={{ padding: 10, fontSize: 16 }}>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
