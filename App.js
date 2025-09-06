@@ -1,22 +1,28 @@
 import {Text, View,Image,Linking} from 'react-native';
 import FontAwesome6 from '@expo/vector-icons/FontAwesome6';
-import { Button, SafeAreaView, ScrollView } from 'react-native-web';
+import { ActivityIndicator, Button, SafeAreaView, ScrollView } from 'react-native-web';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 export default function App() {
   const name = "Arafat Mamia"
   const title = "Contact me"
+  const links = {
+  github: 'SavinVadim1312',
+  email: 'vadim@notjust.dev',
+  // x: 'VadimNotJustDev',
+};
   const contactMe = ()=>{
     Linking.openURL("mailto:arafatmamia001@gmail.com")
   }
   const renderIcons = () => {
 	  return (
 	    <View style={{ flexDirection: 'row', gap: 10, marginVertical: 10 }}>
-	      <FontAwesome6 name="github" size={24} color="black" />
-	      <FontAwesome6 name="x-twitter" size={24} color="black" />
-	      <FontAwesome6 name="at" size={24} color="black" />
+	      {links.github && <FontAwesome6 name="github" size={24} color="black" />}
+	      {links.x && <FontAwesome6 name="x-twitter" size={24} color="black" />}
+	      {links.email && <FontAwesome6 name="at" size={24} color="black" />}
 	    </View>
 	  );
 	};
+ 
   return (
       <SafeAreaProvider>
         <SafeAreaView>
@@ -60,7 +66,7 @@ export default function App() {
     </View>
   </SafeAreaView>
   </SafeAreaProvider>
-  );
+  )
 }
 
 
